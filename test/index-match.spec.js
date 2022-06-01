@@ -49,4 +49,20 @@ describe('match the indexes', () => {
     const actual = matchTheIndexes(lista, listb)
     expect(actual).to.eql([{1: 'invalid-letter'}, {2: 'correct-position'}, {3: 'invalid-letter'}])
   })
+  
+  it('is one to none match', () => {
+    const lista = [3]
+    const listb = []
+
+    const actual = matchTheIndexes(lista, listb)
+    expect(actual).to.eql([{3: 'invalid-letter'}])
+  })
+
+  it('is three to none match', () => {
+    const lista = [1, 2, 3]
+    const listb = []
+
+    const actual = matchTheIndexes(lista, listb)
+    expect(actual).to.eql([{1: 'invalid-letter'}, {2: 'invalid-letter'}, {3: 'invalid-letter'}])
+  })
 })
