@@ -1,4 +1,3 @@
-// Stop the mutations!
 const matchTheIndexes = (a /* guess letter index array */, b /* word letter index array  */) => {
   let result = []
   let totalAs = a.length

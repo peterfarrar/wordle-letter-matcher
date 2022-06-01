@@ -1,11 +1,5 @@
 const { matchTheIndexes } = require('./index-match')
 
-// const statuses = [
-//   'invalid-letter',
-//   'wrong-position',
-//   'correct-position'
-// ]
-
 const getIndexes = (letter, array, startingIndex) => {
   index = array.indexOf(letter, startingIndex)
   return index == -1 ? [] : [index, ...getIndexes(letter, array, index + 1)]
@@ -31,8 +25,6 @@ const checkTheGuess = (w, g) => {
 
   return result
 }
-
-// console.log(getIndexes('e', ['b','e','n','i','e'], 0))
 
 module.exports = {
   checkTheGuess
