@@ -6,21 +6,24 @@ describe('match the indexes', () => {
     const lista = [1]
     const listb = [1]
 
-    expect(matchTheIndexes(lista, listb)).to.eql([{1: 'correct-position'}])
+    const actual = matchTheIndexes(lista, listb)
+    expect(actual).to.eql([{1: 'correct-position'}])
   })
 
   it('is one to one no match', () => {
     const lista = [1]
     const listb = [2]
 
-    expect(matchTheIndexes(lista, listb)).to.eql([{1: 'wrong-position'}])
+    const actual = matchTheIndexes(lista, listb)
+    expect(actual).to.eql([{1: 'wrong-position'}])
   })
 
   it('is two to one match', () => {
     const lista = [1, 2]
     const listb = [2]
 
-    expect(matchTheIndexes(lista, listb)).to.eql([{1: 'invalid-letter'}, {2: 'correct-position'}])
+    const actual = matchTheIndexes(lista, listb)
+    expect(actual).to.eql([{1: 'invalid-letter'}, {2: 'correct-position'}])
   })
   
   it('is one to two match', () => {
@@ -29,8 +32,6 @@ describe('match the indexes', () => {
 
     const actual = matchTheIndexes(lista, listb)
     expect(actual).to.eql([{1: 'correct-position'}])
-    // expect(matchTheIndexes(lista, listb)).to.eql([{1: 'correct-position'}])
-    // expect(actual).to.eql([{1: 'correct-position'}, {2: 'invlaid-letter'}])
   })
     
   it('is one to three match', () => {
@@ -39,14 +40,13 @@ describe('match the indexes', () => {
 
     const actual = matchTheIndexes(lista, listb)
     expect(actual).to.eql([{1: 'correct-position'}])
-    // expect(matchTheIndexes(lista, listb)).to.eql([{1: 'correct-position'}])
-    // expect(actual).to.eql([{1: 'correct-position'}, {2: 'invlaid-letter'}])
   })
 
   it('is two to one match', () => {
     const lista = [1, 2, 3]
     const listb = [2]
 
-    expect(matchTheIndexes(lista, listb)).to.eql([{1: 'invalid-letter'}, {2: 'correct-position'}, {3: 'invalid-letter'}])
+    const actual = matchTheIndexes(lista, listb)
+    expect(actual).to.eql([{1: 'invalid-letter'}, {2: 'correct-position'}, {3: 'invalid-letter'}])
   })
 })
